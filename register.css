@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Nav baar start */
+.header{
+    width: 100%;
+    /* min-height: 100vh; */
+    /* background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url(/img/seedlingshands-1000.jpg); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* position: relative; */
+}
+nav{
+    display: flex;
+    padding: 2% 6% ;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+
+.navlinks{
+    flex: 1;
+    text-align: right;
+}
+
+.navlinks ul li{
+    list-style: none;
+    display:inline-block;
+    padding:8px 12px;
+    position: relative;
+}
+
+.navlinks ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.navlinks ul li::after{
+    content: "";
+    width: 0%;
+    height:2px;
+    background: white;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.navlinks ul li:hover::after{
+    width:100%;
+}
+
+/************** nav baar end *************/
+
+
+
+.hero{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/img/seedlingshands-1000.jpg);
+    background-size: cover;
+    position: absolute;
+    /* background: rgb(255,255,255); */
+    /* background: linear-gradient(4deg, rgba(255,255,255,1) 0%, rgba(9,121,20,1) 50%); */
+}
+.form-box{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: rgb(255, 255, 255);
+    border-radius: 50px;
+    padding: 5px;
+    overflow: hidden;
+    border: black solid;
+}
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    /* box-shadow: 0 0 20px 9px #ff61241f; */
+    border-radius: 30px;
+    border: solid;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+.toggle-btn:hover{
+    /* background-color: green;
+    color: ivory;
+    border-radius: 25px;
+    transition: 0.8s ease-in-out; */
+}
+.btn{
+    /* top: 0;
+    left: 0;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background: linear-gradient(to right, #ff5ea2, #ff3527);
+    border-radius: 30px;
+    transition: .5s; */
+}
+.input-group{
+    top: 140px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 50px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    /* border-bottom: 1px solid #999; */
+    outline: none;
+    background: transparent;
+    text-align: center;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto 65px;
+
+    background-color: rgb(87, 250, 87);
+    color: whitesmoke;
+    border: none;
+    border-radius: 30px;
+    
+}
+.chech-box{
+    margin: 30px 10px 30px 0;
+}
+.chech-box{
+    margin: 30px 10px 30px 50px;
+}
+span{
+    margin: auto 20px;
+    color: #777;
+    font-size: 13px;
+    bottom: 68px ;
+    position: absolute;
+}
+
+/************ footer start ***********/
+footer {
+    background-color:green;
+    box-sizing: border-box;
+    padding: 70px 0;
+    line-height: 1.5;
+
+}
+
+.container {
+    max-width: 90%;
+    /* background-color: green; */
+    margin:  auto;
+}
+
+ul{
+    list-style: none;
+}
+
+.footer-col{
+    width: 20%;
+    padding: 0px 15px;
+
+}
+
+.raw{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col h4{
+    font-size: 20px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 2em;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.footer-col h4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color:white;
+    height: 3px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom:10px;
+}
+
+.footer-col ul li a{
+    font-size: 20px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.footer-col ul li a:hover{
+    color: white;
+    padding-left:10px;
+
+}
+
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color:rgb(255, 255, 255,0.2);
+    margin: 0px 10px 10px 0px;
+    text-align: center;
+    line-height: 40px;
+    border-radius:50px;
+    color: white;
+    transition: all 0.5s ease;
+
+}
+
+.footer-col .social-links a:hover{
+    color:#24262b;
+    background-color:white;
+
+}
+
+
+@media (max-width: 700px) {
+    .footer-col{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    
+}
