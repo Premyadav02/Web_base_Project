@@ -485,7 +485,8 @@
     span {
         color: #777;
         font-size: 13px;
-        margin-top: 15px;
+        /* border: black solid; */
+        /* margin-top: 15px; */
         margin-left: 10px;
         position: absolute;
         color: aliceblue;
@@ -586,14 +587,14 @@
                 <button type="button" class="toggle-btn">Log In</button>
                 <button type="button" class="toggle-btn">Register</button>
             </div>
-            <form id="register" class="input-group">
+            <form id="register" class="input-group" onSubmit = "return checkPassword(this)">
                 <input type="text" class="input-field" placeholder="First Name" required>
                 <input type="email" class="input-field" placeholder="Email I'd" required>
-                <input type="password" class="input-field" placeholder="Password " id="myInput" required>
-                <input type="password" class="input-field" placeholder="Confirm Password " id="myInput2" required>
-                <!-- <input type="checkbox" class="check-box" onclick="myFunction()"><span> Show Password </span> -->
-                <!-- <div class="check"></div>  -->
-                <input type="checkbox" class="box"><span>I agree to terms &conditions</span>
+                <input type="password" name= password1 class="input-field" placeholder="Password " id="myInput" required>
+                <input type="password" name= password2 class="input-field" placeholder="Confirm Password " id="myInput2" required>
+                <input type="checkbox" class="check-box" onclick="myFunction()"><span> Show Password </span>
+                <!-- <div class="check"></div>  --> <br>
+                <input type="checkbox" class="box" ><span>I agree to terms &conditions</span>
                 <button type="submit" class="submit-btn">Register</button>
             </form>
         </div>
@@ -656,20 +657,46 @@
         function hideMenu() {
             navLinks.style.right = "-200px";
         }
-        // function myFunction() {
-        //     var x = document.getElementById("myInput");
-        //     var y = document.getElementById("myInput2");
-        //     if (x.type === "password") {
-        //         x.type = "text";
-        //     } else {
-        //         x.type = "password";
-        //     }
-        //     if (y.type === "password") {
-        //         y.type = "text";
-        //     } else {
-        //         y.type = "password";
-        //     }
-        // }
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            var y = document.getElementById("myInput2");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            if (y.type === "password") {
+                y.type = "text";
+            } else {
+                y.type = "password";
+            }
+        }
+
+        function checkPassword(form) {
+				password1 = form.password1.value;
+				password2 = form.password2.value;
+
+				// If password not entered
+				if (password1 == '')
+					alert ("Please enter Password");
+					
+				// If confirm password not entered
+				else if (password2 == '')
+					alert ("Please enter confirm password");
+					
+				// If Not same return False.	
+				else if (password1 != password2) {
+					alert ("\nPassword did not match: Please try again...")
+					return false;
+				}
+
+				// If same return True.
+				else{
+				// 	alert("Password Match: Welcome to GeeksforGeeks!")
+				// 	return true;
+				}
+			}
+        
     </script>
 </body>
 
