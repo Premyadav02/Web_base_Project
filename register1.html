@@ -370,7 +370,7 @@
         background-color: white;
 
     }
-    
+
 
     @media (max-width: 700px) {
         .footer-col {
@@ -477,11 +477,12 @@
         /* margin: 35px 0px 5px 25px; */
     }
 
-    .box{
+    .box {
         margin: 0px 0px 0px 50px;
         /* margin-left: 50px; */
         /* margin-top: 20px; */
     }
+
     span {
         color: #777;
         font-size: 13px;
@@ -587,14 +588,16 @@
                 <button type="button" class="toggle-btn">Log In</button>
                 <button type="button" class="toggle-btn">Register</button>
             </div>
-            <form id="register" class="input-group" onSubmit = "return checkPassword(this)">
+
+            <form id="register" class="input-group" onSubmit="return checkPassword(this)">
                 <input type="text" class="input-field" placeholder="First Name" required>
                 <input type="email" class="input-field" placeholder="Email I'd" required>
-                <input type="password" name= password1 class="input-field" placeholder="Password " id="myInput" required>
-                <input type="password" name= password2 class="input-field" placeholder="Confirm Password " id="myInput2" required>
+                <input type="password" name=password1 class="input-field" placeholder="Password " id="myInput" required>
+                <input type="password" name=password2 class="input-field" placeholder="Confirm Password " id="myInput2"
+                    required>
                 <input type="checkbox" class="check-box" onclick="myFunction()"><span> Show Password </span>
                 <!-- <div class="check"></div>  --> <br>
-                <input type="checkbox" class="box" ><span>I agree to terms &conditions</span>
+                <input type="checkbox" class="box" required><span>I agree to terms &conditions</span>
                 <button type="submit" class="submit-btn">Register</button>
             </form>
         </div>
@@ -673,31 +676,43 @@
         }
 
         function checkPassword(form) {
-				password1 = form.password1.value;
-				password2 = form.password2.value;
+            password1 = form.password1.value;
+            password2 = form.password2.value;
 
-				// If password not entered
-				if (password1 == '')
-					alert ("Please enter Password");
-					
-				// If confirm password not entered
-				else if (password2 == '')
-					alert ("Please enter confirm password");
-					
-				// If Not same return False.	
-				else if (password1 != password2) {
-					alert ("\nPassword did not match: Please try again...")
-					return false;
-				}
+            // If password not entered
+            if (password1 == '')
+                alert("Please enter Password");
 
-				// If same return True.
-				else{
-				// 	alert("Password Match: Welcome to GeeksforGeeks!")
-				// 	return true;
-				}
-			}
-        
+            // If confirm password not entered
+            else if (password2 == '')
+                alert("Please enter confirm password");
+
+            // If Not same return False.	
+            else if (password1 != password2) {
+                alert("\nPassword did not match: Please try again...")
+                return false;
+            }
+
+            // If same return True.
+            else {
+                // 	alert("Password Match: Welcome to GeeksforGeeks!")
+                // 	return true;
+            }
+        }
+
     </script>
 </body>
 
 </html>
+
+
+
+onsubmit="if(document.getElementById('box').checked)
+{
+return true;
+}
+else
+{
+alert('Please read and agree the Terms and Conditions');
+return false;
+}
